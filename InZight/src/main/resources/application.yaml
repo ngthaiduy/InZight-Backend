@@ -1,0 +1,67 @@
+
+
+
+spring:
+    datasource:
+        url: ${SPRING_DATASOURCE_URL}
+        username: ${SPRING_DATASOURCE_USERNAME}
+        password: ${SPRING_DATASOURCE_PASSWORD}
+        driver-class-name: com.mysql.cj.jdbc.Driver
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+        properties:
+            hibernate:
+                format_sql: true
+        defer-datasource-initialization: true
+
+    sql:
+        init:
+            mode: never
+            schema-locations: classpath:schema.sql
+
+    mail:
+        host: smtp.gmail.com
+        port: 587
+        username: ${SPRING_MAIL_USERNAME}
+        password: ${SPRING_MAIL_PASSWORD}
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    starttls:
+                        enable: true
+                        required: true
+                    connectiontimeout: 5000
+                    timeout: 5000
+                    writetimeout: 5000
+    payos:
+        client-id: ${PAYOS_CLIENT_ID}
+        api-key: ${PAYOS_API_KEY}
+        checksum-key: ${PAYOS_CHECKSUM_KEY}
+
+server:
+    port: 8080
+    forward-headers-strategy: framework
+
+springdoc:
+    api-docs:
+        enabled: true
+        path: /v3/api-docs
+    swagger-ui:
+        enabled: true
+        path: /swagger-ui.html
+        tags-sorter: alpha
+
+app:
+    icon-base-url: /icons/
+    mail:
+        sender: ${APP_MAIL_SENDER}
+    upload-dir: uploads
+ai:
+    bot-id: 24
+
+gemini:
+   api:
+     key: ${GEMINI_API_KEY}

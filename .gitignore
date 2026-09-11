@@ -1,0 +1,29 @@
+
+# Local credentials and generated artifacts
+.env
+.env.*
+!.env.example
+**/target/
+**/.idea/
+**/*.iml
+**/uploads/
+**/*.log
+**/application-local.*
+
+# Personal machine files, secrets, and local datasets
+**/.vscode/
+**/.idea/
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.dump
+*.bak
+**/application-dev.*
+**/application-prod.*
+**/application-staging.*
+**/application-secrets.*
+**/data-local.sql
+InZight/src/main/resources/data.sql
